@@ -1,6 +1,8 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
+
+    //Input and Sorting
     int n;
     printf("Enter the number of elements: ");
     scanf("%d", &n);
@@ -23,20 +25,12 @@ int main()
         }
     }
 
-    printf("The sorted array is: ");
+    printf("The sorted array is: \n");
     for (int i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);
     }
-    if (n % 2 == 0)
-    {
-        int median = (arr[(n / 2) - 1] + arr[n / 2]) / 2;
-        printf("The median is: %d", median);
-    }
-    else
-    {
-        int median = arr[n / 2];
-        printf("The median is: %d", median);
-    }
-    return 0;
+    
+
+
 }
