@@ -7,9 +7,8 @@ int main()
     int n, sum = 0;
     printf("Enter a number: ");
     scanf("%d", &n);
-    printf("The reverse of %d is %d\n", n, rev_num(n));
     Sep_Digit(rev_num(n));
-    printf("\nThe sum of digits is...%d", sum_Digit(n));
+    
 }
 int sum_Digit(int n)
 {
