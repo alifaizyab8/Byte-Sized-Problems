@@ -2,20 +2,22 @@
 #include <math.h>
 
 int main(void) {
-    double principal;
-    int years;
-    printf("Enter principal amount: ");
-    if (scanf("%lf", &principal) != 1) return 1;
-    printf("Enter number of years: ");
-    if (scanf("%d", &years) != 1 || years < 1) return 1;
+    double principal = 1000.0;  // starting amount
 
-    for (int rate = 5; rate <= 10; ++rate) {
-        double amount = principal;
-        printf("\nRate: %d%%\nYear  Amount\n", rate);
-        for (int y = 1; y <= years; ++y) {
-            amount *= (1.0 + rate / 100.0);
-            printf("%4d  %.2f\n", y, amount);
+    // loop for rates from 5% to 10%
+    for (double rate = 0.05; rate <= 0.10; rate += 0.01) {
+
+        printf("Interest rate: %.2lf%%\n", rate * 100);
+        printf("%4s%21s\n", "Year", "Amount on deposit");
+
+        // loop for years 1 to 10
+        for (int year = 1; year <= 10; ++year) {
+            double amount = principal * pow(1.0 + rate, year);
+            printf("%4d%21.2f\n", year, amount);
         }
+
+        printf("\n"); // blank line between rates
     }
+
     return 0;
 }

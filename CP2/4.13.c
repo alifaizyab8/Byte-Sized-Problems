@@ -1,20 +1,19 @@
 #include <stdio.h>
 
-int main(void) {
-    int n;
-    printf("Enter a positive integer: ");
-    if (scanf("%d", &n) != 1 || n < 1) {
-        printf("Invalid input\n");
-        return 1;
+int main() {
+    int n, i;
+    long  sum = 0, sum_sq = 0, sum_cu = 0;
+
+    scanf("%d", &n);
+
+    i = 0;
+    while (i <= n) {
+        sum = sum + i;
+        sum_sq = sum_sq + i * i;
+        sum_cu = sum_cu + i * i * i;
+        i = i + 1;
     }
 
-    long long sum = 0, sum_sq = 0, sum_cu = 0;
-    for (int i = 1; i <= n; ++i) {
-        sum += i;
-        sum_sq += (long long)i * i;
-        sum_cu += (long long)i * i * i;
-    }
-
-    printf("Sum = %lld\nSum of squares = %lld\nSum of cubes = %lld\n", sum, sum_sq, sum_cu);
+    printf("%ld %ld %ld", sum, sum_sq, sum_cu);
     return 0;
 }

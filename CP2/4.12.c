@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+
 
 int main(void) {
     printf("Prime numbers from 1 to 100:\n");
@@ -11,8 +11,9 @@ int main(void) {
                 break;
             }
         }
-        if (is_prime) printf("%d ", n);
+        if (is_prime)
+         printf("%d\n ", n);
     }
-    printf("\n");
+    
     return 0;
 }
